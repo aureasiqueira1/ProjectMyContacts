@@ -10,7 +10,7 @@ import FormGroup from "../FormGroup";
 import Input from "../Input";
 import Select from "../Select";
 import useErrors from "../../hooks/useErrors";
-import CategoriesService from "../../services/CategoriesService";
+// import CategoriesService from "../../services/CategoriesService";
 import formatPhone from "../../utils/formatPhone";
 import { useEffect } from "react";
 
@@ -30,7 +30,13 @@ export default function ContactForm({ buttonLabel, onSubmit }) {
   useEffect(() => {
     async function loadCategories() {
       try {
-        const categoriesList = await CategoriesService.listCategories();
+        // const categoriesList = await CategoriesService.listCategories();
+        const categoriesList = [
+          { id: 1, name: "Facebook" },
+          { id: 2, name: "Instagram" },
+          { id: 3, name: "LinkedIn" },
+          { id: 4, name: "Twitter" },
+        ].listCategories();
 
         setCategories(categoriesList);
       } catch {

@@ -43,8 +43,26 @@ export default function Home() {
     try {
       setIsLoading(true);
 
-      const contactsList = await ContactsService.listContacts(orderBy);
-
+      //  const contactsList = await ContactsService.listContacts(orderBy);
+      const contactsList = [
+        {
+          category_id: 1,
+          category_name: "Facebook",
+          email: "joao@email.com.br",
+          id: 1,
+          name: "joao",
+          phone: "(44) 44444-4444",
+        },
+        {
+          category_id: 2,
+          category_name: "Instagram",
+          email: "helena@email.com.br",
+          id: 2,
+          name: "helena",
+          phone: "(33) 33333-4444",
+        },
+      ];
+      console.log("contactsList: ", contactsList);
       setHasError(false);
 
       setContacts(contactsList);
@@ -143,7 +161,7 @@ export default function Home() {
             <ListHeader orderBy={orderBy}>
               <button type="button" onClick={handleToggleOrderBy}>
                 <span>Nome</span>
-                <img src={arrow} alt="Arrow" />
+                {/* <img src={arrow} alt="Arrow" /> */}
               </button>
             </ListHeader>
           )}
