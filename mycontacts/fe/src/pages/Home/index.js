@@ -168,7 +168,9 @@ export default function Home() {
             <Card key={contact.id}>
               <div className="info">
                 <div className="contact-name">
-                  <strong>{contact.name.toUpperCase()}</strong>
+                  <strong>
+                    {contact.name[0].toUpperCase() + contact.name.slice(1)}
+                  </strong>
                   {contact.category_name && (
                     <small>{contact.category_name}</small>
                   )}
